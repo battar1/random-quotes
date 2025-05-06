@@ -4,16 +4,13 @@ const autoGeneratebtn = document.querySelector(".auto-generate");
 const stopGeneratebtn = document.querySelector(".stop-generate");
 const generateState = document.querySelector(".generate-state");
 
-document.addEventListener("DOMContentLoaded", function () {
-  autoGenerate();
-});
 let interval;
 generatebtn.onclick = generateQuote;
 autoGeneratebtn.onclick = autoGenerate;
 stopGeneratebtn.onclick = stopGenerate;
 
 async function getQuotes() {
-  const res = await fetch("/quotes.json");
+  const res = await fetch("quotes.json");
   const data = await res.json();
   return data;
 }
